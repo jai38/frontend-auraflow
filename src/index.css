@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-brand-card: var(--card);
+  --color-line: var(--line);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+  --color-forest-green: var(--forest-green);
+  --color-rose: var(--rose);
+  --color-plum: var(--plum);
+  --color-sky: var(--sky);
+  --color-coral: var(--coral);
+  --color-sage-brand: var(--sage-brand);
+  --color-ember: var(--ember);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-sage: var(--sage);
+  --color-sage-foreground: var(--sage-foreground);
+  --color-surface-muted: var(--surface-muted);
+}
+
+:root {
+  --radius: 0.625rem;
+  --sage: oklch(0.945 0.022 155);
+  --sage-foreground: oklch(0.45 0.055 155);
+  --surface-muted: oklch(0.985 0.004 120);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--card);
+  --card-foreground: var(--ink);
+  --border: var(--line);
+
+  /* Reverted to original site background and text colors */
+  --ink: #1B2433;
+  --ink-soft: #4F596F;
+  --paper: #F7F9F7;
+  --paper-2: #EEF2EE;
+  --card: #FFFFFF;
+  --line: #E2E8F0;
+  --navy: #1B2433;
+  --gold: #F9A825;
+  --teal: #05959D;
+  --forest-green: #035C59;
+  --rose: #AD6A82;
+  --plum: #7A5B93;
+  --sky: #50718F;
+  --coral: #C86B56;
+  --sage-brand: #5B7861;
+  --ember: #B3583E;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  }
+}
