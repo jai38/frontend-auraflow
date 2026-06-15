@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from "../../context/AuthContext";
-import logoPng from "../../assets/logo.png";
 
 interface LandingHeaderProps {
   onCrisisClick: () => void;
@@ -37,10 +36,15 @@ export function LandingHeader({ onCrisisClick }: LandingHeaderProps) {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div 
             onClick={() => navigate("/")}
-            className="flex items-center gap-2 cursor-pointer hover:opacity-85 select-none transition-opacity"
+            className="flex items-center gap-3 cursor-pointer hover:opacity-85 select-none transition-opacity"
             id="header-logo-container"
           >
-            <img src={logoPng} alt="AuraFlow Logo" className="h-8 w-auto block select-none" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-plum text-white shadow-md shadow-plum/20">
+              <Sparkles className="h-4.5 w-4.5 fill-current animate-pulse" />
+            </div>
+            <span className="text-xl font-serif font-black tracking-tight text-slate-900 select-none">
+              AuraFlow
+            </span>
           </div>
 
           <nav className="flex items-center gap-6">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AlertCircle, X, Heart, Shield, Mail, Lock, Eye, EyeOff, Loader2, User } from "lucide-react";
+import { AlertCircle, X, Heart, Shield, Mail, Lock, Eye, EyeOff, Loader2, User, Sparkles } from "lucide-react";
 import { GoogleLogin } from '@react-oauth/google';
 import type { CredentialResponse } from '@react-oauth/google';
 import { motion, AnimatePresence } from "framer-motion";
@@ -316,7 +316,7 @@ export function LoginPage() {
           className="absolute top-12 left-12 z-50 flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity"
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-plum shadow-lg border border-line/50">
-            <Heart className="h-7 w-7 fill-current" />
+            <Sparkles className="h-7 w-7 fill-current text-plum animate-pulse" />
           </div>
           <span className="text-3xl font-black tracking-tight text-ink select-none">
             AuraFlow
@@ -387,7 +387,7 @@ export function LoginPage() {
           className="lg:hidden flex items-center gap-3 absolute top-8 left-8 cursor-pointer hover:opacity-90 transition-opacity"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-plum text-white shadow-lg">
-            <Heart className="h-5 w-5 fill-current" />
+            <Sparkles className="h-5 w-5 fill-current animate-pulse" />
           </div>
           <span className="text-2xl font-black tracking-tight text-[#1B2433] select-none">
             AuraFlow
