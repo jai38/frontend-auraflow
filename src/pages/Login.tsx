@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AlertCircle, X, Heart, Shield, Mail, Lock, Eye, EyeOff, Loader2, User, Sparkles } from "lucide-react";
+import { AlertCircle, X, Shield, Mail, Lock, Eye, EyeOff, Loader2, User, Sparkles } from "lucide-react";
 import { GoogleLogin } from '@react-oauth/google';
 import type { CredentialResponse } from '@react-oauth/google';
 import { motion, AnimatePresence } from "framer-motion";
