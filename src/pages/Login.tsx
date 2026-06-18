@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { AlertCircle, X, Shield, Mail, Lock, Eye, EyeOff, Loader2, User, Sparkles, Sun, Moon } from "lucide-react";
+import { AlertCircle, X, Shield, Mail, Lock, Eye, EyeOff, Loader2, User, Sparkles } from "lucide-react";
 import { GoogleLogin } from '@react-oauth/google';
 import type { CredentialResponse } from '@react-oauth/google';
 import { motion, AnimatePresence } from "framer-motion";
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
+// import { useTheme } from '../context/ThemeContext';
 import studentLoginPortrait from '../assets/student_login_portrait.png';
 
 export function LoginPage() {
   const { loginSuccess, user } = useAuth();
   const navigate = useNavigate();
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
 
   // Redirect to dashboard (or custom redirect path) if user is already authenticated
   useEffect(() => {
@@ -309,7 +309,7 @@ export function LoginPage() {
   return (
     <main className="min-h-screen w-full flex flex-col lg:flex-row bg-[#F7F9F7] font-sans overflow-hidden relative">
       
-      {/* Floating Theme Toggle */}
+      {/* Floating Theme Toggle Hidden for Now
       <div className="absolute top-8 right-8 z-50">
         <button
           type="button"
@@ -320,6 +320,7 @@ export function LoginPage() {
           {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
         </button>
       </div>
+      */}
       
       {/* LEFT PANEL: Branding & Visuals (Hidden on small screens, full width on large) */}
       <div className="hidden lg:flex relative w-[45%] flex-col justify-center items-center p-12 overflow-hidden bg-transparent">

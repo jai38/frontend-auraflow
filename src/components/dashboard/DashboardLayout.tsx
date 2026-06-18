@@ -12,12 +12,10 @@ import {
   MessageSquare,
   Calendar,
   Sparkles,
-  Sun,
-  Moon,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { config } from "../../config";
-import { useTheme } from "../../context/ThemeContext";
+// import { useTheme } from "../../context/ThemeContext";
 
 interface MenuItem {
   id: string;
@@ -65,7 +63,7 @@ export function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
   const navigate = useNavigate();
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
   return (
     <div className="h-screen w-screen flex bg-[#F4F6F5] text-slate-800 font-sans overflow-hidden">
       {/* 1. Desktop Sidebar Navigation */}
@@ -282,6 +280,7 @@ export function DashboardLayout({
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6 ml-auto">
+            {/* Theme Toggle Hidden for Now
             <button
               onClick={toggleTheme}
               className="p-2.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-all cursor-pointer flex items-center justify-center shadow-sm"
@@ -289,6 +288,7 @@ export function DashboardLayout({
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
+            */}
             <button
               onClick={logout}
               className="group flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-slate-700 transition-all duration-300 hover:bg-slate-50 hover:border-slate-300 hover:shadow-sm cursor-pointer border-none"

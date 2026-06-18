@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { AlertCircle, Sparkles, Sun, Moon } from "lucide-react";
+import { AlertCircle, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from "../../context/AuthContext";
-import { useTheme } from "../../context/ThemeContext";
+// import { useTheme } from "../../context/ThemeContext";
 
 interface LandingHeaderProps {
   onCrisisClick: () => void;
@@ -11,7 +11,7 @@ interface LandingHeaderProps {
 export function LandingHeader({ onCrisisClick }: LandingHeaderProps) {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -50,6 +50,7 @@ export function LandingHeader({ onCrisisClick }: LandingHeaderProps) {
           </div>
 
           <nav className="flex items-center gap-4 sm:gap-6">
+            {/* Theme Toggle Hidden for Now
             <button
               onClick={toggleTheme}
               className="p-2.5 rounded-full border border-line hover:bg-paper-2 hover:border-slate-300 text-ink-soft hover:text-ink transition-all cursor-pointer bg-transparent flex items-center justify-center"
@@ -57,6 +58,7 @@ export function LandingHeader({ onCrisisClick }: LandingHeaderProps) {
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
+            */}
             {user ? (
               <button
                 onClick={() => navigate("/dashboard")}
