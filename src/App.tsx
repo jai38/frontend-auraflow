@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { LoginPage } from './pages/Login';
 import { LandingPage } from './pages/LandingPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
@@ -44,25 +45,27 @@ function LoginRoute() {
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginRoute />} />
-          <Route path="/discover" element={<DiscoverRoute />} />
-          <Route path="/crisis" element={<CrisisPage />} />
-          <Route 
-            path="/dashboard" 
-            element={
-              <ProtectedRoute allowedRoles={['STUDENT']}>
-                <Dashboard />
-              </ProtectedRoute>
-            } 
-          />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LoginRoute />} />
+            <Route path="/discover" element={<DiscoverRoute />} />
+            <Route path="/crisis" element={<CrisisPage />} />
+            <Route 
+              path="/dashboard" 
+              element={
+                <ProtectedRoute allowedRoles={['STUDENT']}>
+                  <Dashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

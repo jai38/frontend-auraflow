@@ -92,3 +92,146 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
   }
 }
+
+/* ─── Dark/Dim Theme Overrides ───────────────────────────────────── */
+:root.dark {
+  --ink: #F8FAFC;
+  --ink-soft: #94A3B8;
+  --paper: #0B0F19;
+  --paper-2: #111827;
+  --card: #1E293B;
+  --line: #334155;
+  --navy: #38BDF8;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  
+  --sage: oklch(0.25 0.022 155);
+  --sage-foreground: oklch(0.85 0.055 155);
+  --surface-muted: oklch(0.18 0.004 120);
+}
+
+:root.dark {
+  /* Custom dim scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--paper-2);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-soft);
+  }
+
+  /* Override hardcoded white background classes */
+  .bg-white {
+    background-color: var(--card) !important;
+  }
+  .bg-white\/95 {
+    background-color: color-mix(in srgb, var(--card) 95%, transparent) !important;
+  }
+  .bg-white\/85 {
+    background-color: color-mix(in srgb, var(--card) 85%, transparent) !important;
+  }
+  .bg-white\/80 {
+    background-color: color-mix(in srgb, var(--card) 80%, transparent) !important;
+  }
+  .bg-white\/70 {
+    background-color: color-mix(in srgb, var(--card) 70%, transparent) !important;
+  }
+  .bg-white\/60 {
+    background-color: color-mix(in srgb, var(--card) 60%, transparent) !important;
+  }
+  .bg-white\/50 {
+    background-color: color-mix(in srgb, var(--card) 50%, transparent) !important;
+  }
+  .bg-white\/45 {
+    background-color: color-mix(in srgb, var(--card) 45%, transparent) !important;
+  }
+  .bg-white\/40 {
+    background-color: color-mix(in srgb, var(--card) 40%, transparent) !important;
+  }
+  .bg-white\/20 {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  .bg-white\/15 {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+  .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+  }
+  .bg-white\/5 {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+
+  /* Layout, body and widget background colors */
+  .bg-\[\#F4F6F5\], .bg-\[\#F7F9F7\], .bg-\[\#F0F2F5\], .bg-slate-50, .bg-\[\#F8FAFC\], .bg-slate-50\/50 {
+    background-color: var(--paper) !important;
+  }
+  .bg-slate-100 {
+    background-color: var(--paper-2) !important;
+  }
+  .bg-slate-200 {
+    background-color: var(--line) !important;
+  }
+
+  /* Text color class mappings to dim variables */
+  .text-slate-900 {
+    color: var(--ink) !important;
+  }
+  .text-slate-800 {
+    color: var(--ink) !important;
+  }
+  .text-slate-700 {
+    color: var(--ink-soft) !important;
+  }
+  .text-slate-600 {
+    color: var(--ink-soft) !important;
+  }
+  .text-slate-500 {
+    color: var(--ink-soft) !important;
+  }
+  .text-slate-400 {
+    color: var(--ink-soft) !important;
+    opacity: 0.85;
+  }
+
+  /* Borders and line colors */
+  .border-slate-200, 
+  .border-slate-200\/60, 
+  .border-slate-200\/50, 
+  .border-slate-100,
+  .border-line\/75,
+  .border-line\/70,
+  .border-line\/50,
+  .border-line\/20 {
+    border-color: var(--line) !important;
+  }
+
+  /* Input fields */
+  input[type="text"], input[type="email"], input[type="password"] {
+    color: var(--ink) !important;
+  }
+  input::placeholder {
+    color: var(--ink-soft) !important;
+    opacity: 0.5;
+  }
+
+  /* Interactive items hover overrides */
+  .hover\:bg-slate-50:hover, .hover\:bg-slate-50\/50:hover {
+    background-color: var(--paper-2) !important;
+  }
+
+  /* Crisis banner styles in dark mode */
+  .bg-\[\#fcf8f2\] {
+    background-color: #271e16 !important;
+    border-color: #452a16 !important;
+  }
+  .text-amber-800 {
+    color: #fbd38d !important;
+  }
+}
