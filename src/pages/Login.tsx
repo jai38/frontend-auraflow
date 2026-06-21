@@ -35,10 +35,10 @@ export function LoginPage() {
   // Dynamic page title for SEO
   useEffect(() => {
     document.title = mode === 'login' 
-      ? "Sign In — AuraFlow" 
+      ? "Sign In | AuraFlow" 
       : mode === 'register' 
-        ? "Sign Up — AuraFlow" 
-        : "Reset Password — AuraFlow";
+        ? "Sign Up | AuraFlow" 
+        : "Reset Password | AuraFlow";
   }, [mode]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
