@@ -56,7 +56,7 @@ export function CrisisPage() {
   }, []);
 
   useEffect(() => {
-    document.title = "Get Help Now — Crisis Support | AuraFlow";
+    document.title = "Get Help Now | Crisis Support | AuraFlow";
 
     const fetchHotlines = async () => {
       try {
