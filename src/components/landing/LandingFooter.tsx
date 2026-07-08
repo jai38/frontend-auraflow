@@ -38,7 +38,7 @@ export function LandingFooter({ onCrisisClick }: LandingFooterProps) {
               onClick={onCrisisClick}
               className="text-ember font-bold hover:underline cursor-pointer border-none bg-transparent p-0 text-[inherit]"
             >
-              Need help right now? Get help immediately &rarr;
+              Need help right now? View support helplines &rarr;
             </button>
             <span className="text-line">|</span>
             <span className="text-ink-soft select-none">&copy; {new Date().getFullYear()} AuraFlow. All rights reserved.</span>

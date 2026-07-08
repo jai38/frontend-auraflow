@@ -567,7 +567,7 @@ export function LandingPage() {
             </div>
             
             <p className="text-xs text-ink-soft max-w-3xl">
-              Coaches are non-clinical wellbeing coaches, not therapists. If anything you're facing needs clinical care, we'll gently connect you to a qualified professional, you're never left to figure it out alone.
+              Our student coaches are here as peers to help you handle stress, think things through, and feel a bit steadier. If you ever need specialized support, we'll help guide you to professional care so you're always supported.
             </p>
           </section>
 
@@ -627,21 +627,7 @@ export function LandingPage() {
             </div>
           </section>
 
-          {/* Onboarding & Stories (Shaped by students) */}
-          <section className="py-16 border-t border-line/60" id="student-voice">
-            <div className="bg-[#eadfce]/20 border border-line rounded-[2.5rem] p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-sm">
-              <span className="text-[11px] font-bold text-coral uppercase tracking-widest block mb-3">Shaped by Students</span>
-              <h2 className="text-3xl font-serif text-ink tracking-tight font-medium mb-4">
-                Built for students. Shaped by students.
-              </h2>
-              <p className="text-sm text-ink-soft leading-relaxed max-w-2xl mx-auto mb-8">
-                AuraFlow wasn't built because students needed another app. It was built because too many students were struggling quietly. Every tool. Every conversation. Every feature starts with one question: "What would have helped when life felt hard?"
-              </p>
-              <div className="text-xs font-bold text-ink-soft border-t border-line/60 pt-6">
-                This is not just something you use. It's something you're helping build.
-              </div>
-            </div>
-          </section>
+
 
           {/* Final CTA */}
           <section className="py-20 text-center" id="final-cta">
