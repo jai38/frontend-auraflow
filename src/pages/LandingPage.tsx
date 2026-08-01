@@ -32,10 +32,10 @@ const LAUNCH_TESTS = [
 ];
 
 const COACHES = [
-  { name: "Riya Kapoor", role: "Wellbeing Coach", init: "RK", c1: "from-[#d8472f] to-[#a8331f]", specs: ["Stress", "Confidence", "Anxiety"] },
-  { name: "Marcus Bell", role: "Mindset & Focus Coach", init: "MB", c1: "from-[#0e7c6e] to-[#0a5a4a]", specs: ["Focus", "Motivation", "Habits"] },
-  { name: "Sara Nakamura", role: "Wellbeing & Balance Coach", init: "SN", c1: "from-[#6d28d9] to-[#4818a0]", specs: ["Balance", "Burnout", "Sleep"] },
-  { name: "Tom Okafor", role: "Resilience Coach", init: "TO", c1: "from-[#c8973a] to-[#a06f1f]", specs: ["Setbacks", "Resilience", "Big changes"] }
+  { name: "Varisha Nigar", role: "Psychology & Peer Support Coach", init: "VN", c1: "from-[#d8472f] to-[#a8331f]", specs: ["Psychology Mentorship", "Peer Support", "Mental Health"] },
+  { name: "Vinayak Katyayan", role: "Youth Mental Health & Recovery Coach", init: "VK", c1: "from-[#0e7c6e] to-[#0a5a4a]", specs: ["Youth Mental Health", "Clinical Care", "Structured Recovery"] },
+  { name: "Garvita Singh", role: "Youth Wellbeing & Resilience Coach", init: "GS", c1: "from-[#6d28d9] to-[#4818a0]", specs: ["Youth Wellbeing", "Resilience", "Stress Management"] },
+  { name: "Jairus Rohan", role: "Behavioral Health & Neurodiversity Coach", init: "JR", c1: "from-[#c8973a] to-[#a06f1f]", specs: ["Behavioral Health", "Neurodiversity (ADHD)", "Skill Building"] }
 ];
 
 const BOOKING_SLOTS = ["Mon 4:00pm", "Tue 10:00am", "Wed 6:30pm", "Thu 5:00pm", "Sat 9:00am", "Sun 11:00am"];
