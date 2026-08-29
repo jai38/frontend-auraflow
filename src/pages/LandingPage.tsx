@@ -223,7 +223,7 @@ export function LandingPage() {
                   Sometimes understanding changes more than fixing.
                 </h2>
                 <p className="text-sm text-ink-soft leading-relaxed mb-6">
-                  Not every difficult feeling needs a solution. Sometimes it just needs a name. Sometimes it needs a little attention. The goal isn't to feel good all the time — it's to understand yourself a little better today.
+                  Not every difficult feeling needs a solution. Sometimes it just needs a name. Sometimes it needs a little attention. The goal isn't to feel good all the time - it's to understand yourself a little better today.
                 </p>
                 <div className="flex flex-col gap-2">
                   {FOCUS_AREAS.map((area, idx) => (
@@ -275,7 +275,7 @@ export function LandingPage() {
                 Six quick ways to meet yourself.
               </h2>
               <p className="text-sm text-ink-soft mt-3">
-                Each takes about two minutes and hands back something worth keeping. Start with a check-in, or follow your curiosity — there's no wrong place to begin.
+                Each takes about two minutes and hands back something worth keeping. Start with a check-in, or follow your curiosity - there's no wrong place to begin.
               </p>
             </div>
 
@@ -322,7 +322,7 @@ export function LandingPage() {
                   Every check-in becomes a color.
                 </h2>
                 <p className="text-sm text-slate-300 leading-relaxed mt-4">
-                  Each time you check in, it builds your moodboard and a private picture of how your weeks actually feel. No streaks to keep, no empty calendar gaps, and no pressure — just patterns you can notice and act on.
+                  Each time you check in, it builds your moodboard and a private picture of how your weeks actually feel. No streaks to keep, no empty calendar gaps, and no pressure - just patterns you can notice and act on.
                 </p>
               </div>
 
@@ -408,7 +408,7 @@ export function LandingPage() {
                   </div>
                   <h4 className="text-md font-bold text-ink mb-2">Say it to something that won't judge you.</h4>
                   <p className="text-sm text-ink-soft leading-relaxed mb-6">
-                    Type whatever's on your mind — messy, half-formed, 2am, all of it. WriteFlow helps you slow down long enough to hear your own thoughts. Sometimes that's all you need. No advice unless you want it.
+                    Type whatever's on your mind - messy, half-formed, 2am, all of it. WriteFlow helps you slow down long enough to hear your own thoughts. Sometimes that's all you need. No advice unless you want it.
                   </p>
                 </div>
                 <button
