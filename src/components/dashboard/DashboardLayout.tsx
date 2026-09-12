@@ -11,7 +11,6 @@ import {
   PenTool,
   MessageSquare,
   Calendar,
-  Sparkles,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { config } from "../../config";
