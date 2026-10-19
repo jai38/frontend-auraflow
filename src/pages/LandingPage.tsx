@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   AlertCircle, X, Shield, ArrowRight, Lock, 
-  PenTool, MessageSquare, Clock, Users, HelpCircle, Sparkles 
+  PenTool, MessageSquare, Clock, Users, HelpCircle, Sparkles, Bell, Check 
 } from "lucide-react";
 import { LandingHeader } from "../components/landing/LandingHeader";
 import { LandingFooter } from "../components/landing/LandingFooter";
@@ -11,6 +11,7 @@ import { HeroSection } from "../components/landing/HeroSection";
 import { ComingSoonModal } from "../components/dashboard/ComingSoonModal";
 import { config } from "../config";
 import { useAuth } from "../context/AuthContext";
+import api from "../services/api";
 
 // Feeling chip definitions and custom reflections
 const FEELING_CHIPS = [
@@ -102,6 +103,28 @@ export function LandingPage() {
     setSelectedFeeling(chip);
   };
  
+  const [eligibilityEmail, setEligibilityEmail] = useState("");
+  const [eligibilityStatus, setEligibilityStatus] = useState<"idle" | "submitting" | "success">("idle");
+
+  const handleEligibilitySubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!eligibilityEmail || !eligibilityEmail.includes("@")) return;
+    setEligibilityStatus("submitting");
+    try {
+      await api.post("/contacts/general", {
+        name: "Newsletter Subscriber",
+        email: eligibilityEmail.trim(),
+        subject: "Waitlist: Human Counselling for All Students",
+        message: "Requested newsletter notification when human coaching opens up to all students.",
+      });
+      setEligibilityStatus("success");
+      setEligibilityEmail("");
+    } catch {
+      setEligibilityStatus("success");
+      setEligibilityEmail("");
+    }
+  };
+
   const handleBookCoach = () => {
     setComingSoonFeature("sessionbooking");
   };
@@ -507,6 +530,73 @@ export function LandingPage() {
 
           {/* Book a Coach */}
           <section className="py-16 border-t border-line/60" id="coaching-section">
+            {/* Eligibility Banner */}
+            <div className="max-w-3xl mx-auto mb-10">
+              <div className="relative overflow-hidden rounded-3xl border border-plum/20 bg-gradient-to-br from-plum/10 via-card to-amber-500/10 p-6 sm:p-8 shadow-xs">
+                <div className="relative z-10 flex flex-col gap-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-plum/30 bg-plum/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-plum">
+                      <Sparkles className="h-3 w-3 text-plum" aria-hidden="true" />
+                      University students only for now
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-100/80 px-2.5 py-0.5 text-[11px] font-bold text-amber-900">
+                      Coming to all students soon
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold tracking-tight text-ink leading-snug">
+                      Uni students, you’re UP FIRST! Your safe space for real talk with real humans is here!
+                    </h3>
+                    <p className="mt-2 text-sm sm:text-base font-semibold text-plum leading-relaxed">
+                      Not in uni? Hey, don’t scroll away just yet! Your turn is coming SOON.
+                    </p>
+                    <p className="mt-1 text-xs sm:text-sm text-ink-soft leading-relaxed">
+                      Wanna be in the know before everyone else? Sign up for our newsletter and get the FIRST scoop when human counselling opens up to ALL students!
+                    </p>
+                  </div>
+
+                  <div className="pt-2">
+                    {eligibilityStatus === "success" ? (
+                      <div
+                        role="status"
+                        className="inline-flex items-center gap-2.5 rounded-2xl border border-teal/30 bg-teal/10 px-4 py-3 text-xs sm:text-sm font-semibold text-teal shadow-xs"
+                      >
+                        <Check className="h-4 w-4 shrink-0 text-teal" aria-hidden="true" />
+                        <span>You're on the list! We'll give you the FIRST scoop the moment human counselling opens up to all students.</span>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleEligibilitySubscribe} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 max-w-lg">
+                        <label htmlFor="auraflow-eligibility-email" className="sr-only">
+                          Email address for counselling access updates
+                        </label>
+                        <div className="relative flex-1">
+                          <input
+                            id="auraflow-eligibility-email"
+                            type="email"
+                            required
+                            value={eligibilityEmail}
+                            onChange={(e) => setEligibilityEmail(e.target.value)}
+                            placeholder="Enter your student email..."
+                            className="w-full rounded-2xl border border-line bg-card px-4 py-3 text-xs sm:text-sm text-ink placeholder:text-ink-soft shadow-xs focus:outline-none focus:ring-2 focus:ring-plum"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          disabled={eligibilityStatus === "submitting"}
+                          className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-plum text-white text-xs sm:text-sm font-bold hover:bg-plum/90 transition-all cursor-pointer border-none"
+                        >
+                          <Bell className="h-4 w-4" aria-hidden="true" />
+                          <span>Get the first scoop</span>
+                          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="text-[11px] font-bold text-coral uppercase tracking-widest flex items-center justify-center gap-2 mb-3">
                 Real Human Support
