@@ -104,6 +104,8 @@ export function LandingPage() {
   };
  
   const [eligibilityEmail, setEligibilityEmail] = useState("");
+  const [eligibilityHoneypot, setEligibilityHoneypot] = useState("");
+  const [formMountedAt] = useState(() => Date.now());
   const [eligibilityStatus, setEligibilityStatus] = useState<"idle" | "submitting" | "success">("idle");
 
   const handleEligibilitySubscribe = async (e: React.FormEvent) => {
@@ -116,6 +118,8 @@ export function LandingPage() {
         email: eligibilityEmail.trim(),
         subject: "Waitlist: Human Counselling for All Students",
         message: "Requested newsletter notification when human coaching opens up to all students.",
+        hp_confirm: eligibilityHoneypot,
+        _t: formMountedAt,
       });
       setEligibilityStatus("success");
       setEligibilityEmail("");
@@ -567,6 +571,16 @@ export function LandingPage() {
                       </div>
                     ) : (
                       <form onSubmit={handleEligibilitySubscribe} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 max-w-lg">
+                        <div style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }} aria-hidden="true">
+                          <input
+                            type="text"
+                            name="hp_confirm"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            value={eligibilityHoneypot}
+                            onChange={(e) => setEligibilityHoneypot(e.target.value)}
+                          />
+                        </div>
                         <label htmlFor="auraflow-eligibility-email" className="sr-only">
                           Email address for counselling access updates
                         </label>
